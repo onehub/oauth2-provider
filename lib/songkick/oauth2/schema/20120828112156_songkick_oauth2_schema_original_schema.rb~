@@ -22,10 +22,10 @@ class SongkickOauth2SchemaOriginalSchema < ActiveRecord::Migration
       t.string     :refresh_token_hash, :limit => 40
       t.datetime   :expires_at
     end
-    add_index :oauth2_authorizations, [:client_id, :code], :name => 'oa2_client_id_code'
-    add_index :oauth2_authorizations, [:access_token_hash], :name => 'oa2_access_token_hash'
-    add_index :oauth2_authorizations, [:client_id, :access_token_hash], :name => 'oa2_client_id_access_token_hash'
-    add_index :oauth2_authorizations, [:client_id, :refresh_token_hash], :name => 'oa2_client_id_refresh_token_hash'
+    add_index :oauth2_authorizations, [:client_id, :code]
+    add_index :oauth2_authorizations, [:access_token_hash]
+    add_index :oauth2_authorizations, [:client_id, :access_token_hash]
+    add_index :oauth2_authorizations, [:client_id, :refresh_token_hash]
   end
 
   def self.down
